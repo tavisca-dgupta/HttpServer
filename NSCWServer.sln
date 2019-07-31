@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSCWServer", "NSCWServer\NSCWServer.csproj", "{8FFFF5C1-ED11-4CFA-BD97-1FAAE1C1CB5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSCWServer.Test", "NSCWServer.Test\NSCWServer.Test.csproj", "{57541FFD-687F-49C1-A80B-A1B6CC4CC36D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FFFF5C1-ED11-4CFA-BD97-1FAAE1C1CB5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FFFF5C1-ED11-4CFA-BD97-1FAAE1C1CB5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FFFF5C1-ED11-4CFA-BD97-1FAAE1C1CB5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FFFF5C1-ED11-4CFA-BD97-1FAAE1C1CB5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57541FFD-687F-49C1-A80B-A1B6CC4CC36D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57541FFD-687F-49C1-A80B-A1B6CC4CC36D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57541FFD-687F-49C1-A80B-A1B6CC4CC36D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57541FFD-687F-49C1-A80B-A1B6CC4CC36D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B866AA5-5431-4003-BB9A-8209D4FE285E}
+	EndGlobalSection
+EndGlobal
