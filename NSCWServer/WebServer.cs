@@ -25,13 +25,20 @@ namespace NSCWServer
         }
         public void StartServer()
         {
-                _listener = _requestListener.StartListening(_url.GetAllPrefixes());
-                HttpListenerContext context = _listener.GetContext();
-                HttpListenerRequest request = context.Request;
-                HttpListenerResponse response = context.Response;
-                string url = _request.GetUrlofRequest(request);
-                string responseToSend = "hello world";
-                _response.SendResponse(response, responseToSend);
+            _listener = _requestListener.StartListening(_url.GetAllPrefixes());
+            new Thread(_ =>
+           {
+               while(true)
+               {
+                   HttpListenerContext context = _listener.GetContext();
+                   HttpListenerRequest request = context.Request;
+                   HttpListenerResponse response = context.Response;
+                   string url = _request.GetUrlofRequest(request);
+                   string responseToSend = _fileHandle.DataInFile(_fileHandle.FilePath(url, _url.GetAllPrefixes()));
+                   _response.SendResponse(response, responseToSend);
+               }
+           }).Start();
+                
         }
         public void StopServer()
         {

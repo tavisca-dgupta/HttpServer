@@ -21,7 +21,15 @@ namespace NSCWServer
         }
         public string DataInFile(string filePath)
         {
-            string data = File.ReadAllText(filePath);
+            string data;
+            try
+            {
+                data= File.ReadAllText(filePath);
+            }
+            catch(FileNotFoundException e)
+            {
+                data = "not found";
+            }
             return data;
         }
     }

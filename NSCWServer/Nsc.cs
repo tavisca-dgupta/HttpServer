@@ -12,16 +12,17 @@ namespace NSCWServer
         {
             ManageUrl url = new ManageUrl();
             Console.WriteLine("enter the prefixes you want you server to listen to type 'start' to start server after that");
-            
-            while(true)
-            {
-                string prefix = Console.ReadLine();
-                if (prefix.ToLower().Equals("start"))
-                {
-                    break;
-                }
+
+            //while(true)
+            //{
+            //string prefix = Console.ReadLine();
+            string prefix = "http://localhost:8186/";
+                //if (prefix.ToLower().Equals("start"))
+                //{
+                //    break;
+                //}
                     url.AddPrefix(prefix);
-            }
+            //}
             WebServer webServer = new WebServer(url);
             try
             {
@@ -31,6 +32,7 @@ namespace NSCWServer
             {
                 Console.WriteLine(e);
             }
+            Console.ReadKey(true);
             //Console.WriteLine("enter 'stop' to stop server");
             //string input=Console.ReadLine();
             //if(input.ToLower().Equals("stop"))
