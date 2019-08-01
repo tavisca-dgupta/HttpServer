@@ -11,34 +11,34 @@ namespace NSCWServer
     {
         private static ManageUrl _url;
         private RequestListener _requestListener;
-        private Request _request;
-        HttpListener _listener;
+        private ServerRequest _request;
+        private HttpListener _listener;
         private FileHandle _fileHandle;
-        private Response _response;
+        private ServerResponse _response;
        public WebServer(ManageUrl url)
         {
             _url = url;
             _requestListener = new RequestListener();
             _fileHandle = new FileHandle();
-            _request = new Request();
-            _response = new Response();
+            _request = new ServerRequest(_fileHandle,_url);
+            _response = new ServerResponse();
         }
         public void StartServer()
         {
             _listener = _requestListener.StartListening(_url.GetAllPrefixes());
-            new Thread(_ =>
-           {
-               while(true)
-               {
-                   HttpListenerContext context = _listener.GetContext();
-                   HttpListenerRequest request = context.Request;
-                   HttpListenerResponse response = context.Response;
-                   string url = _request.GetUrlofRequest(request);
-                   string responseToSend = _fileHandle.DataInFile(_fileHandle.FilePath(url, _url.GetAllPrefixes()));
-                   _response.SendResponse(response, responseToSend);
-               }
-           }).Start();
-                
+            while (true)
+            {
+                OnRequestReceived(_listener);
+            }
+        }
+
+        public void OnRequestReceived(HttpListener httpListener)
+        {
+            HttpListenerContext context = _listener.GetContext();
+            string responseToSend = _request.Process(context);
+            HttpListenerResponse response = context.Response;
+            _response.SendResponse(response, responseToSend);
+
         }
         public void StopServer()
         {
@@ -49,5 +49,5 @@ namespace NSCWServer
             return HttpListener.IsSupported;
         }
     }
-   
+
 }

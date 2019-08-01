@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace NSCWServer
 {
-    class Nsc
+    class ServerAdmin
     {
         public static void Main(string[] args)
         {
             ManageUrl url = new ManageUrl();
             Console.WriteLine("enter the prefixes you want you server to listen to type 'start' to start server after that");
 
-            //while(true)
-            //{
-            //string prefix = Console.ReadLine();
-            string prefix = "http://localhost:8186/";
-                //if (prefix.ToLower().Equals("start"))
-                //{
-                //    break;
-                //}
-                    url.AddPrefix(prefix);
-            //}
+            while (true)
+            {
+                string prefix = Console.ReadLine();
+                //string prefix = "http://localhost:8186/";
+                if (prefix.ToLower().Equals("start"))
+                {
+                    break;
+                }
+                url.AddPrefix(prefix);
+            }
             WebServer webServer = new WebServer(url);
             try
             {

@@ -2,9 +2,9 @@
 
 namespace NSCWServer
 {
-    public class Response
+    public class ServerResponse
     {
-        public async void  SendResponse(HttpListenerResponse response,string responseToSend)
+        public void  SendResponse(HttpListenerResponse response,string responseToSend)
         {
             byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseToSend);
             response.ContentLength64 = buffer.Length;

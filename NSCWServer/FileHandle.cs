@@ -28,7 +28,7 @@ namespace NSCWServer
             }
             catch(FileNotFoundException e)
             {
-                data = "not found";
+                data = "<HTML><BODY><h1>404 Not Found</h1><p>Web Page not found!!!!!!!!!!!</p></BODY></HTML>";
             }
             return data;
         }
