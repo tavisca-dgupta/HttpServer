@@ -1,17 +1,20 @@
-﻿namespace NSCWServer
+﻿using System.Collections.Generic;
+
+namespace NSCWServer
 {
     public class ManageUrl
     {
-        private static string[] prefixes;
-        public static int count = 0;
-
+        private static List<string> prefixes;
+        public ManageUrl()
+        {
+            prefixes = new List<string>();
+        }
         public void AddPrefix(string prefix)
         {
-            prefixes[count] = prefix;
-            count++;
+            prefixes.Add(prefix);
         }
 
-        public string[] GetAllPrefixes()
+        public List<string> GetAllPrefixes()
         {
             return prefixes;
         }

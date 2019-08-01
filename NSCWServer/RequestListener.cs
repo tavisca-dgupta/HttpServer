@@ -11,9 +11,9 @@ namespace NSCWServer
     {
         private static HttpListener listener;
         
-        public HttpListener StartListening(string[] prefixes)
+        public HttpListener StartListening(List<string> prefixes)
         {
-            if (prefixes == null || prefixes.Length == 0)
+            if (prefixes == null || prefixes.Count == 0)
                 throw new ArgumentException("prefixes");
 
             // Create a listener.
@@ -26,6 +26,10 @@ namespace NSCWServer
             listener.Start();
             Console.WriteLine("Hey I am Listening...");
             return listener;
+        }
+        public void StopListening()
+        {
+            listener.Stop();
         }
     }
 }

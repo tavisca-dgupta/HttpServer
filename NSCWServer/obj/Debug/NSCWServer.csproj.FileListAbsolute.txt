@@ -1,0 +1,7 @@
+C:\Users\dgupta\source\repos\NSCWServer\NSCWServer\bin\Debug\NSCWServer.exe.config
+C:\Users\dgupta\source\repos\NSCWServer\NSCWServer\bin\Debug\NSCWServer.exe
+C:\Users\dgupta\source\repos\NSCWServer\NSCWServer\bin\Debug\NSCWServer.pdb
+C:\Users\dgupta\source\repos\NSCWServer\NSCWServer\obj\Debug\NSCWServer.csprojAssemblyReference.cache
+C:\Users\dgupta\source\repos\NSCWServer\NSCWServer\obj\Debug\NSCWServer.csproj.CoreCompileInputs.cache
+C:\Users\dgupta\source\repos\NSCWServer\NSCWServer\obj\Debug\NSCWServer.exe
+C:\Users\dgupta\source\repos\NSCWServer\NSCWServer\obj\Debug\NSCWServer.pdb
